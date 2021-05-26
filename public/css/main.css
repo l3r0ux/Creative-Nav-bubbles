@@ -137,7 +137,6 @@ main {
     z-index: 10;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
 }
 #animations-short a {
@@ -155,7 +154,6 @@ main {
     opacity: 0;
     width: 0;
     height: 0;
-    /* border: 2px solid black; */
     border-radius: 50%;
     display: inline-block;
     position: fixed;
@@ -165,7 +163,6 @@ main {
     justify-content: center;
     font-size: 2rem;
     cursor: pointer;
-    /* box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.5); */
     box-shadow: 10px 10px 1px black;
 }
 
@@ -174,7 +171,6 @@ main {
     top: 87%;
     background-color: #6ce6c7;
     transform: translate(-50%, -50%);
-    /* transition: all 200ms ease; */
     animation-name: transitionInOther;
     animation-duration: 500ms;
     animation-fill-mode: forwards;

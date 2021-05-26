@@ -49,6 +49,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// To scroll correct section into view on click on respective nav bubble
 artBubble.addEventListener('click', () => {
     artSection.scrollIntoView({ block: "center" });
 });
