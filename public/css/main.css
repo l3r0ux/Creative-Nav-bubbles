@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.highlighted {
+    color: blueviolet;
+}
+
+nav {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    height: 2rem;
+    max-width: 120rem;
+}
+
+nav a {
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    cursor: pointer;
+}
+
+body {
+    background-color: #7fe5fa;
+}
+
+main {
+    opacity: 1;
+    transition: opacity 400ms ease;
+    background-color: #92fdff;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 350px 350px;
+}
+
+#name h1 {
+    font-size: 4rem;
+}
+
+#hero {
+    margin: 0 auto;
+    height: 100vh;
+    width: 100%;
+    max-width: 120rem;
+    display: flex;
+    animation: transitionIn 500ms;
+}
+
+.hero-containers {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bubbles-guiding-line {
+    opacity: 0;
+    margin: 0 auto;
+    height: 0;
+    width: 0;
+    max-width: 120rem;
+    position: fixed;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-top: 2px solid black;
+    animation-name: fadeInLine;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+
+#skills {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.skill-section {
+    height: 40vh;
+    width: 70%;
+    max-width: 120rem;
+    margin: 5rem 0 5rem 0;
+    padding-top: 6rem;
+    box-shadow: 10px 10px 1px black;
+    transition: margin 200ms ease;
+    background-color: blueviolet;
+    border-radius: 5rem;
+    position: relative;
+}
+
+#digital-arts-short {
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#digital-arts-short a {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    transition: color 200ms ease;
+}
+#digital-arts-short a:hover {
+    color: #6ce6c7;
+    cursor: pointer;
+}
+
+#models-short {
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#models-short a {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    transition: color 200ms ease;
+}
+#models-short a:hover {
+    color: #6ce6c7;
+    cursor: pointer;
+}
+
+#animations-short {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+#animations-short a {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    transition: color 200ms ease;
+}
+#animations-short a:hover {
+    color: #6ce6c7;
+    cursor: pointer;
+}
+
+.nav-bubbles {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    /* border: 2px solid black; */
+    border-radius: 50%;
+    display: inline-block;
+    position: fixed;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    /* box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.5); */
+    box-shadow: 10px 10px 1px black;
+}
+
+.digital-arts-bubble {
+    left: 30%;
+    top: 87%;
+    background-color: #6ce6c7;
+    transform: translate(-50%, -50%);
+    /* transition: all 200ms ease; */
+    animation-name: transitionInOther;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+.models-bubble {
+    left: 50%;
+    top: 87%;
+    background-color: #6ce6bb;
+    transform: translate(-50%, -50%);
+    animation-name: transitionInOther;
+    animation-duration: 500ms;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+}
+.animations-bubble {
+    left: 70%;
+    top: 87%;
+    background-color: #67f5a9;
+    transform: translate(-50%, -50%);
+    animation-name: transitionInOther;
+    animation-duration: 500ms;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+}
+
+/* To unfix art bubble */
+.unfix-digital-arts-bubbles {
+    top: var(--digital-arts-short__top);
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+.unfix-models-bubbles {
+    top: var(--models-short__top);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+.unfix-animations-bubbles {
+    top: var(--animations-short__top);
+    left: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+#meet-the-artist {
+    position: relative;
+    margin: 0 auto;
+    height: 50vh;
+    width: 100%;
+    max-width: 120rem;
+    background-color: blueviolet;
+    box-shadow: 0 -3px 10px 0 black;
+    z-index: 1;
+}
+
+/* Class to fade out everything */
+.fade-body {
+    opacity: 0;
+}
+
+@keyframes transitionInOther {
+    from {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    to {
+        opacity: 1;
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+@keyframes fadeInLine {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        height: 1px;
+        width: 100%;
+        max-width: 120rem;
+    }
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
