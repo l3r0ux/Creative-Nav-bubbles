@@ -223,13 +223,7 @@ main {
     width: 100%;
     max-width: 120rem;
     background-color: blueviolet;
-    box-shadow: 0 -3px 10px 0 black;
     z-index: 1;
-}
-
-/* Class to fade out everything */
-.fade-body {
-    opacity: 0;
 }
 
 @keyframes transitionInOther {
